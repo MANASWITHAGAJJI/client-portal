@@ -1,0 +1,103 @@
+# Client Portal System (CRM)
+
+## Project Overview
+
+The Client Portal System is a responsive web application
+that provides clients with a self-service platform to manage
+their profiles, projects, documents, invoices and support requests.
+
+## Student Details
+
+- Student: MANASWITHA GAJJI
+- Student ID: DAS013625
+- Domain: Web Development
+- Internship ID: 6301
+- Task ID: WD-CRM-006
+- Company: Data Alcott Systems
+
+## Technologies Used
+
+1. HTML5
+2. CSS3
+3. JavaScript
+4. Local Storage
+5. Lucide Icons
+
+## Features
+
+### Client Features
+
+- Client Login
+- Client Registration
+- Personal Dashboard
+- Profile Management
+- Project Tracking
+- Document Center
+- Document Download
+- Support Ticket Creation
+- Invoice Viewing
+- Messaging System
+- Dark Mode
+
+### Admin Features
+
+- Admin Login
+- Admin Dashboard
+- Client Management
+- Add and Edit Clients
+- Project Management
+- Document Management
+- Support Ticket Management
+- Invoice Generation
+- Payment Status Management
+
+## Demo Login Credentials
+
+Client:
+Email: john@company.com
+Password: demo123
+
+Admin:
+Email: admin@portal.com
+Password: admin123
+
+## Data Storage
+
+JavaScript arrays and objects are used to store
+client, project, document, ticket, invoice and message data.
+
+Local Storage is used to preserve changes in the browser.
+
+## How to Run
+
+1. Download the project files.
+2. Open the project folder in VS Code.
+3. Make sure all four files are in the same folder.
+4. Open index.html in your browser.
+5. Login using the demo credentials.
+
+## Learning Outcomes
+
+- Understanding HTML page structure.
+- Creating responsive layouts using CSS.
+- Implementing JavaScript functionality.
+- Working with arrays and objects.
+- Implementing CRUD operations.
+- Using browser Local Storage.
+- Creating client and admin interfaces.
+- Building interactive dashboards.
+
+## Limitations
+
+This is a frontend-only demonstration project.
+Authentication is simulated and is not suitable for production.
+Uploaded documents are represented by metadata, and demo
+downloads are generated locally. A backend is required for
+secure authentication, real file storage and shared data.
+
+## Conclusion
+
+The Client Portal System provides an organized platform
+for client management and self-service. The project
+demonstrates frontend development skills using HTML,
+CSS and JavaScript.

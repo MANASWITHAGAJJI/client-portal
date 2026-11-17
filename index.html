@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Portal System | CRM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<!-- LOGIN AND REGISTRATION -->
+<div id="authScreen" class="auth-screen">
+    <div class="auth-card">
+        <div class="brand-mark">✦</div>
+        <p class="eyebrow">CLIENT EXPERIENCE PLATFORM</p>
+        <h1>Welcome to your portal</h1>
+        <p class="muted">Sign in to manage projects, documents and support.</p>
+
+        <form id="loginForm" class="auth-form">
+            <label>Email Address
+                <input id="loginEmail" type="email" value="john@company.com" required>
+            </label>
+
+            <label>Password
+                <input id="loginPassword" type="password" value="demo123" required>
+            </label>
+
+            <label>Sign in as
+                <select id="loginRole">
+                    <option value="client">Client</option>
+                    <option value="admin">Administrator</option>
+                </select>
+            </label>
+
+            <button class="btn primary full" type="submit">Sign In</button>
+        </form>
+
+        <div class="auth-hint">
+            <b>Demo Login:</b><br>
+            Client: john@company.com / demo123<br>
+            Admin: admin@portal.com / admin123
+        </div>
+
+        <button id="showRegister" class="text-btn">
+            Create a client account
+        </button>
+
+        <form id="registerForm" class="auth-form hidden">
+            <h3>Create Account</h3>
+
+            <label>Full Name
+                <input id="regName" required placeholder="Your name">
+            </label>
+
+            <label>Company
+                <input id="regCompany" required placeholder="Company name">
+            </label>
+
+            <label>Email
+                <input id="regEmail" type="email" required>
+            </label>
+
+            <label>Password
+                <input id="regPassword" type="password" minlength="6" required>
+            </label>
+
+            <button class="btn primary full">Register</button>
+        </form>
+    </div>
+</div>
+
+<!-- MAIN APPLICATION -->
+<div id="app" class="app-shell hidden">
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="sidebar">
+
+        <div class="sidebar-brand">
+            <span class="brand-icon">✦</span>
+            Northstar <span class="brand-light">Portal</span>
+        </div>
+
+        <div class="workspace-label">WORKSPACE</div>
+
+        <nav class="nav-list" id="navigation">
+
+            <button class="nav-link active" data-page="dashboard">
+                <i data-lucide="layout-dashboard"></i> Dashboard
+            </button>
+
+            <button class="nav-link" data-page="profile">
+                <i data-lucide="user-round"></i> My Profile
+            </button>
+
+            <button class="nav-link" data-page="projects">
+                <i data-lucide="briefcase-business"></i> Projects
+            </button>
+
+            <button class="nav-link" data-page="documents">
+                <i data-lucide="folder"></i> Documents
+            </button>
+
+            <button class="nav-link" data-page="support">
+                <i data-lucide="life-buoy"></i> Support
+            </button>
+
+            <button class="nav-link" data-page="invoices">
+                <i data-lucide="receipt"></i> Invoices
+            </button>
+
+            <button class="nav-link" data-page="messages">
+                <i data-lucide="messages-square"></i> Messages
+            </button>
+
+            <div id="adminNav" class="hidden">
+                <div class="workspace-label admin-label">ADMINISTRATION</div>
+
+                <button class="nav-link" data-page="admin">
+                    <i data-lucide="shield-check"></i> Admin Panel
+                </button>
+            </div>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="help-card">
+                <strong>Need a hand?</strong>
+                <p>Our team is here to help.</p>
+                <button data-page="support" class="help-link">
+                    Contact Support →
+                </button>
+            </div>
+
+            <button id="logoutBtn" class="nav-link logout">
+                <i data-lucide="log-out"></i> Sign Out
+            </button>
+
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-area">
+
+        <!-- TOP NAVIGATION -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button id="menuToggle" class="icon-btn mobile-menu">
+                    ☰
+                </button>
+
+                <div>
+                    <div class="breadcrumb">
+                        Workspace / <b id="crumb">Dashboard</b>
+                    </div>
+                    <div class="top-date" id="todayLabel"></div>
+                </div>
+
+            </div>
+
+            <div class="topbar-actions">
+
+                <button id="roleToggle" class="role-toggle">
+                    ⇄ <span>Client View</span>
+                </button>
+
+                <button id="themeToggle" class="icon-btn">
+                    ☾
+                </button>
+
+                <button class="icon-btn notification-btn">
+                    ♧
+                </button>
+
+                <div class="user-menu">
+                    <div class="avatar" id="topAvatar">JS</div>
+
+                    <div class="user-meta">
+                        <strong id="topName">John Smith</strong>
+                        <span id="topRole">Client Account</span>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- DYNAMIC PAGE CONTENT -->
+        <div id="pageContent" class="page-content"></div>
+
+        <footer class="footer">
+            © 2026 Northstar Portal
+            <span>Secure Client Workspace · Demo Project</span>
+        </footer>
+
+    </main>
+</div>
+
+<!-- NOTIFICATION -->
+<div id="toast" class="toast"></div>
+
+<!-- MODALS -->
+<div id="modalRoot"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
